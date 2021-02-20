@@ -1,0 +1,13 @@
+{% extends 'osso/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="main-content login">
+      <form action="{% url 'social:begin' 'osso' %}" method="post" class="login-form">
+        <label>Email</label>
+        <input type="email" name="email" />
+        {% csrf_token %}
+        <button type="submit">Sign in with SSO</button>
+    </div>  
+  </div>
+{% endblock %}
